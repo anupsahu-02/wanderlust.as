@@ -1,0 +1,143 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+    .cat-box {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        background-color: transparent;
+    }
+    .cat-field {
+        margin: 0.3rem 0.3rem 0.3rem 0.5rem;
+        /* margin: 0.2rem auto; */
+        display: flex;
+        justify-content: space-around;
+        height: 2.2rem;
+        align-items: center;
+        width: 23%;
+        border: 1px solid rgb(236, 228, 244);
+        border-collapse: collapse;
+        box-shadow: 1px 1px 1px rgb(196, 185, 185);
+        border-radius: 2px;
+    }
+    .cat-field:hover {
+        box-shadow: 1px 1px 4px rgb(201, 193, 193);
+        border: 1px solid goldenrod;
+    }
+    .cat-title, .cat-check {
+        cursor: pointer;
+    }
+</style>
+<div class="row">
+    <div class="col-8 offset-2">
+    <h1>Add new listing</h1>
+
+        <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Titel</label>
+                <input type="text" id="title" placeholder="title" name="listing[title]" class="form-control"
+                required
+                >
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Title should be required!
+                  </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea type="text" id="description" placeholder="description" name="listing[description]" class="form-control"
+                required
+                ></textarea>
+                <div class="invalid-feedback">
+                    Please enter a short description
+                </div>
+            </div>
+            
+            <!-- <div class="mb-3">
+                <label for="image" class="form-label">Link/URL</label>
+                <input type="text" id="image" name="listing[image]" placeholder="Link/URl" class="form-control"
+                >
+            </div> -->
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" id="image" name="listing[image]" class="form-control"
+                >
+                <div class="invalid-feedback">
+                    Choose any listing image!
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" id="price" placeholder="price" name="listing[price]" class="form-control"
+                required
+                >
+                <div class="invalid-feedback">
+                    Price should be valid
+                </div>
+            </div>
+
+            <div class="mb-3 col-md-8">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" id="country" name="listing[country]" placeholder="country" class="form-control"
+                required
+                >
+                <div class="invalid-feedback">
+                    Country name should be valid
+                </div>
+            </div>
+        </div>
+        
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" id="location" name="listing[location]" placeholder="location" class="form-control"
+                required
+                >
+                <div class="invalid-feedback">
+                    Location should be valid
+                </div>
+            </div>
+            <!-- <div class="mb-3">
+                <label for="categories" class="form-label">categories</label>
+                <input type="text" id="categories" name="listing[categories]" placeholder="categories" class="form-control"
+                required
+                >
+            </div> -->
+            <label for="" class="form-label s">categories</label>
+            <div class="mb-3 cat-box s">
+                <div class="cat-field">
+                    <label class="cat-title" for="Rooms">Rooms</label>
+                    <input class="cat-check" type="checkbox" name="listing[categories]" value="Rooms" id="Rooms">
+                </div>
+                <div class="cat-field">
+                    <label class="cat-title" for="Iconic Cities">Iconic Cities</label> 
+                    <input class="cat-check" type="checkbox" name="listing[categories]" value="Iconic Cities" id="Iconic Cities">
+                </div>
+                <div class="cat-field">
+                    <label class="cat-title" for="Mountains">Mountains</label> 
+                    <input class="cat-check" type="checkbox" name="listing[categories]" value="Mountains" id="Mountains">
+                </div>
+                <div class="cat-field">
+                    <label class="cat-title" for="Castles">Castles</label> 
+                    <input class="cat-check" type="checkbox" name="listing[categories]" value="Castles" id="Castles">
+                </div>
+                <div class="cat-field">
+                    <label class="cat-title" for="Amazing Pools">Amazing Pools</label> 
+                    <input class="cat-check" type="checkbox" name="listing[categories]" value="Amazing Pools" id="Amazing Pools">
+                </div>
+                <div class="cat-field">
+                    <label class="cat-title" for="Camping">Camping</label> 
+                    <input class="cat-check" type="checkbox" name="listing[categories]" value="Camping" id="Camping">
+                </div>
+            </div>
+            <button class="btn btn-dark add-new">Add</button>
+            <br> <br>
+        </form>
+    </div>
+</div>
