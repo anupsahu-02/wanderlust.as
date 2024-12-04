@@ -33,8 +33,6 @@ module.exports.search = async(req, res) => {
 module.exports.searchCategories = async (req, res) => {
     let q = [];
     q.push(req.query.q);
-    console.log(q)
     let allListings = await Listing.find({categories: {$in: q}});
-    console.log(allListings);
     res.render("listings/categ.ejs", {allListings});
 }
