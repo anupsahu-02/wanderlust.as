@@ -27,11 +27,12 @@ const cookie = require("express-session/session/cookie.js");
 const MongoStore = require('connect-mongo');
 const { error } = require('console');
 
-const dbUrl = process.env.ATLASDB_URL;
+const MONGOOSE_URL = "mongodb://127.0.0.1:27017/wanderlust";
+// const dbUrl = process.env.ATLASDB_URL;
 
 main().then(res => {console.log("connection Success")}).catch(err => {console.log(err)})
 async function main() {
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(MONGOOSE_URL);
 }
 
 app.set("view engine", "ejs");
@@ -42,7 +43,7 @@ app.engine("ejs", ejsMate);
 app.use(methodOverride("_method"));
 
 const store = MongoStore.create({
-    mongoUrl: dbUrl,
+    mongoUrl: MONGOOSE_URL,
     crypto: {
         secret: process.env.SECRET,
     },
