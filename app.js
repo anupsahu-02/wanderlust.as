@@ -28,11 +28,11 @@ const MongoStore = require('connect-mongo');
 const { error } = require('console');
 
 const MONGOOSE_URL = "mongodb://127.0.0.1:27017/wanderlust";
-// const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = process.env.ATLASDB_URL;
 
 main().then(res => {console.log("connection Success")}).catch(err => {console.log(err)})
 async function main() {
-    await mongoose.connect(MONGOOSE_URL);
+    await mongoose.connect(dbUrl);
 }
 
 app.set("view engine", "ejs");
@@ -43,7 +43,7 @@ app.engine("ejs", ejsMate);
 app.use(methodOverride("_method"));
 
 const store = MongoStore.create({
-    mongoUrl: MONGOOSE_URL,
+    mongoUrl: dbUrl,
     crypto: {
         secret: process.env.SECRET,
     },
