@@ -1,5 +1,27 @@
 <% layout("/layouts/boilerplate") %>
-<h4>Your Imfomations</h4>
-<br>
-<p>Username: <b> <%= currentUser.username %></b></p>
-<p>Email: <u><i><%= currentUser.email %> </i></u></p>
+
+<style>
+    .log-btn {
+        display: inline;
+    }
+    @media (max-width: 500px) {
+        .account-page {
+            display: flex;
+        }
+    }
+</style>
+
+<div class="sign-login-option account-page">
+    <% if (!currentUser) { %>
+      <div><a class="nav-link" href="/signup"><b>Sign up</b></a></div>
+      <div><a class="nav-link" href="/login"><b>Login</b></a></div>
+    <% } %>
+</div>
+
+<% if (currentUser) { %>
+    <h4>Your Imfomations</h4>
+    <br>
+    <p>Username: <b> <%= currentUser.username %></b></p>
+    <p>Email: <u><i><%= currentUser.email %> </i></u></p>
+    <div><a class="nav-link log-btn" href="/logout"><b>Log Out</b></a></div>
+<% } %>

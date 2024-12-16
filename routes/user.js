@@ -19,6 +19,6 @@ router.route("/login")
 router.get("/logout", userController.logout);
 
 // Account Route
-router.get("/account", isLoggedIn, userController.renderAccount)
+router.get("/account", userController.renderAccount)
 
 module.exports = router;

@@ -9,26 +9,6 @@ body {
     flex: 1;
 }
 
-.navbar {
-    height: 5rem;
-    background-color: white !important;
-    z-index: 5 !important;
-}
-
-.fa-compass {
-    color: #fe424d;
-    font-size: 2rem;
-}
-
-.nav-link {
-    color: #222222 !important;
-    font-weight: 500;
-}
-
-.navbar {
-    margin-bottom: 1rem;
-}
-
 /* footer */
 .f-info-links a {
     text-decoration: none;
@@ -50,6 +30,7 @@ body {
     background-color: #ebf3ed;
     position: relative;
     bottom: -87px;
+    z-index: 2;
 }
 
 .f-info-socials, .f-info-brand, .f-info-links {

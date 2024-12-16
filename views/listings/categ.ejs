@@ -48,69 +48,27 @@
         text-decoration: none;
         color: black;
     }
+    @media (min-width: 501px) {
+        .search-listings {
+            display: none;
+        }
+    }
+    @media (max-width: 500px) {
+        .search-listings-phone {
+            width: 100% !important;
+            padding: 1rem 0.3rem 0.5rem 0;
+            position: fixed;
+            bottom: 0;
+            z-index: 1;
+            background-color: white;
+        }
+        .filter {
+            font-size: smaller;
+        }
+    }
 </style>
-<div id="filters">
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Trending">
-                <div><i class="fa-solid icon fa-fire"></i></div>
-                <p>Trending</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Rooms">
-                <div><i class="fa-solid icon fa-bed"></i></div>
-                <p>Rooms</p>
-            </a> 
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Iconic Cities">
-                <div><i class="fa-solid icon fa-mountain-city"></i></div>
-                <p>Iconic Cities</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Mountains">
-                <div><i class="fa-solid icon fa-mountain"></i></div>
-                <p>Mountains</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Castles">
-                <div><i class="fa-brands icon fa-fort-awesome"></i></div>
-                <p>Castles</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Amazing Pools">
-                <div><i class="fa-solid icon fa-person-swimming"></i></div>
-                <p>Amazing Pools</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Camping">
-                <div><i class="fa-solid icon fa-campground"></i></div>
-                <p>Camping</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Farms">
-                <div><i class="fa-solid icon fa-cow"></i></div>
-                <p>Farms</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Arctic">
-                <div><i class="fa-solid icon fa-snowman"></i></div>
-                <p>Arctic</p>
-            </a>
-        </div>
-        <div class="tax-toggle ms-auto">
-            <div class="form-check-reverse form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxs</label>
-            </div>
-        </div>
-</div>
+
+<!-- <%- include("../includes/filter.ejs") %> -->
 
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
     <% for( listing of allListings ) { %>
@@ -129,6 +87,15 @@
         </div>
         </a>
     <% } %>
+</div>
+
+<div class="search-listings search-listings-phone">
+    <div class="">
+      <form class="d-flex needs-validation" role="search" action="/listings/search" novalidate>
+        <input class="form-control me-2 search-inp" name="q" type="search" placeholder="Search to location" required>
+        <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+      </form>
+    </div>
 </div>
 
 <script>

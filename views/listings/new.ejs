@@ -28,13 +28,23 @@
     .cat-title, .cat-check {
         cursor: pointer;
     }
+
+    @media (max-width: 500px) {
+        .new-page {
+            margin: 0;
+            width: 100%;
+        }
+        .cat-field {
+            width: 100%;
+        }
+    }
 </style>
 <div class="row">
-    <div class="col-8 offset-2">
+    <div class="col-8 offset-2 new-page">
     <h1>Add new listing</h1>
-
+        <hr>
         <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
-            <div class="mb-3">
+            <div class="mb-3 inp">
                 <label for="title" class="form-label">Titel</label>
                 <input type="text" id="title" placeholder="title" name="listing[title]" class="form-control"
                 required
@@ -56,12 +66,6 @@
                     Please enter a short description
                 </div>
             </div>
-            
-            <!-- <div class="mb-3">
-                <label for="image" class="form-label">Link/URL</label>
-                <input type="text" id="image" name="listing[image]" placeholder="Link/URl" class="form-control"
-                >
-            </div> -->
 
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
@@ -109,8 +113,8 @@
                 required
                 >
             </div> -->
-            <label for="" class="form-label s">categories</label>
-            <div class="mb-3 cat-box s">
+            <label for="" class="form-label">categories</label>
+            <div class="mb-3 cat-box">
                 <div class="cat-field">
                     <label class="cat-title" for="Rooms">Rooms</label>
                     <input class="cat-check" type="checkbox" name="listing[categories]" value="Rooms" id="Rooms">

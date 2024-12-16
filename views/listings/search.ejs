@@ -1,27 +1,5 @@
 <% layout("/layouts/boilerplate") %>
 <style>
-    #filters{
-        display: flex;
-        flex-wrap: wrap;
-        /* align-items: center; */
-    }
-    .filter {
-        margin-right: 2rem;
-        text-align: center;
-        opacity: 0.8;
-        margin: 0.5rem 2rem 0.5rem 0;
-    }
-    .filter:hover {
-        opacity: 1;
-        cursor: pointer;
-    }
-    .filter p {
-        font-size: 0.8rem;
-    }
-    .tax-info {
-        display: none;
-        font-size: 0.8rem;
-    }
     .tax-toggle {
         padding: 1rem;
         align-content: center;
@@ -34,53 +12,24 @@
     .form-check-input, .form-check-label {
         cursor: pointer;
     }
+    @media (min-width: 501px) {
+        .search-listings {
+            display: none;
+        }
+    }
+    @media (max-width: 500px) {
+        .search-listings {
+            width: 95%;
+            padding: 1rem 0.3rem 0.5rem 0;
+            position: fixed;
+            bottom: 0;
+            z-index: 1;
+            background-color: white;
+        }
+    }
 </style>
-<div id="filters">
-    <div class="filter">
-        <div><i class="fa-solid fa-fire"></i></div>
-        <p>Trending</p>
-    </div>
-    <div class="filter">
-        <div><i class="fa-solid fa-bed"></i></div>
-        <p>Rooms</p>
-    </div>
-    <div class="filter">
-        <div><i class="fa-solid fa-mountain-city"></i></div>
-        <p>Iconic Cities</p>
-    </div>
-    <div class="filter">
-        <div><i class="fa-solid fa-mountain"></i></div>
-        <p>Mountains</p>
-    </div>
-    <div class="filter">
-        <div><i class="fa-brands fa-fort-awesome"></i></div>
-        <p>Castles</p>
-    </div>
-    <div class="filter">
-        <div><i class="fa-solid fa-person-swimming"></i></div>
-        <p>Amazing Pools</p>
-    </div>
-    <div class="filter">
-        <div><i class="fa-solid fa-campground"></i></div>
-        <p>Camping</p>
-    </div>
-    <div class="filter">
-        <div><i class="fa-solid fa-cow"></i></div>
-        <p>Farms</p>
-    </div>
-    <div class="filter">
-        <div><i class="fa-solid fa-snowman"></i></div>
-        <p>Arctic</p>
-    </div>
 
-    <div class="tax-toggle ms-auto">
-        <div class="form-check-reverse form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxs</label>
-          </div>
-    </div>
-
-</div>
+<!-- <%- include("../includes/filter.ejs") %> -->
 
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
     <% for( listing of allListings ) { %>
@@ -99,6 +48,15 @@
         </div>
         </a>
     <% } %>
+</div>
+
+<div class="search-listings">
+    <div class="">
+      <form class="d-flex needs-validation" role="search" action="/listings/search" novalidate>
+        <input value="<%= q %>" class="form-control me-2 search-inp" name="q" type="search" placeholder="Search to location" required>
+        <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+      </form>
+    </div>
 </div>
 
 <script>

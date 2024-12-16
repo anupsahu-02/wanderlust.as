@@ -1,6 +1,16 @@
 <% layout("/layouts/boilerplate") %>
+
+<style>
+    @media (max-width: 500px) {
+        .signup-phone {
+            margin: 0;
+            width: 100%;
+        }
+    }
+</style>
+
 <div class="row">
-    <div class="col-6 offset-3">
+    <div class="col-6 offset-3 signup-phone">
         <h1>SignUp on Wanderlust</h1>
         
         <form method="POST" action="/signup" class="needs-validation" novalidate>

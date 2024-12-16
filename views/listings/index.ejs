@@ -1,115 +1,49 @@
 <% layout("/layouts/boilerplate") %>
 <style>
-    #filters{
-        display: flex;
-        flex-wrap: wrap;
+    .tax-toggle-phone {
+        width: fit-content;
+        margin-bottom: 1rem;
+        margin-right: 0.5rem;
     }
-    .filter {
-        /* margin-right: 2rem; */
-        text-align: center;
-        opacity: 0.8;
-        margin: 0.5rem 1.5rem 0.5rem 0;
+    @media (min-width: 501px) {
+        .search-listings {
+            display: none;
+        }
+        .tax-toggle-phone {
+            display: none;
+        }
     }
-    .filter:hover {
-        opacity: 1;
-        cursor: pointer;
-    }
-    .filter p {
-        font-size: 0.8rem;
-    }
-    .tax-info {
-        display: none;
-        font-size: 0.8rem;
-    }
-    .tax-toggle {
-        /* display: flex; */
-        padding: 1rem;
-        align-content: center;
-        text-align: center !important;
-        height: 3.5rem;
-        border: 1px solid black;
-        border-radius: 0.4rem;
-        /* margin-right: 2rem; */
-    }
-    .form-check-input, .form-check-label {
-        cursor: pointer;
-    }
-    .cat-btn {
-        border: none;
-        background-color: transparent;
-    }
-    .icon {
-        opacity: 0.8;
-    }
-    .icon:hover {
-        opacity: 1;
-    }
-    .categ-a {
-        text-decoration: none;
-        color: black;
+    @media (max-width: 500px) {
+        .search-listings {
+            width: 95%;
+            padding: 1rem 0.3rem 0.5rem 0;
+            position: fixed;
+            bottom: 0;
+            z-index: 1;
+            background-color: white;
+        }
+        .filters {
+            display: none;
+        }
     }
 </style>
-<div id="filters">
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Trending">
-                <div><i class="fa-solid icon fa-fire"></i></div>
-                <p>Trending</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Rooms">
-                <div><i class="fa-solid icon fa-bed"></i></div>
-                <p>Rooms</p>
-            </a> 
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Iconic Cities">
-                <div><i class="fa-solid icon fa-mountain-city"></i></div>
-                <p>Iconic Cities</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Mountains">
-                <div><i class="fa-solid icon fa-mountain"></i></div>
-                <p>Mountains</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Castles">
-                <div><i class="fa-brands icon fa-fort-awesome"></i></div>
-                <p>Castles</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Amazing Pools">
-                <div><i class="fa-solid icon fa-person-swimming"></i></div>
-                <p>Amazing Pools</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Camping">
-                <div><i class="fa-solid icon fa-campground"></i></div>
-                <p>Camping</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Farms">
-                <div><i class="fa-solid icon fa-cow"></i></div>
-                <p>Farms</p>
-            </a>
-        </div>
-        <div class="filter">
-            <a class="categ-a" href="/listings/search/categories?q=Arctic">
-                <div><i class="fa-solid icon fa-snowman"></i></div>
-                <p>Arctic</p>
-            </a>
-        </div>
-        <div class="tax-toggle ms-auto">
-            <div class="form-check-reverse form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxs</label>
-            </div>
-        </div>
+
+<span class="filters"><%- include("../includes/filter.ejs") %></span>
+
+<div class="tax-toggle ms-auto tax-toggle-phone">
+    <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxs</label>
+    </div>
+</div>
+
+<div class="search-listings">
+    <div class="">
+      <form class="d-flex needs-validation" role="search" action="/listings/search" novalidate>
+        <input class="form-control me-2 search-inp" name="q" type="search" placeholder="Search to location" required>
+        <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+      </form>
+    </div>
 </div>
 
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">

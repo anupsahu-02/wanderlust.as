@@ -1,4 +1,21 @@
 <style>
+  .navbar {
+    height: 5rem;
+    background-color: white !important;
+    z-index: 5 !important;
+    margin-bottom: 1rem;
+  }
+
+  .fa-compass {
+      color: #fe424d;
+      font-size: 2rem;
+  }
+
+  .nav-link {
+      color: #222222 !important;
+      font-weight: 500;
+  }
+
   .d-flex {
     display: flex;
     align-items: center;
@@ -39,38 +56,123 @@
     border: 1px solid goldenrod !important;
     box-shadow: 0 0 10px blanchedalmond;
   }
+  .nav-option {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .nav-right-option {
+    display: flex;
+    align-items: center;
+  }
+  .sign-login-option {
+    display: flex;
+  }
+  .sign-login-option a {
+    margin-left: 2rem;
+  }
+  .account-logout-option {
+    display: flex;
+  }
+  .account-logout-option a {
+    margin-left: 1rem;
+  }
+  .nav-left-option, .nav-center-option, .nav-right-option {
+    display: flex;
+    height: 100%;
+    width: 33%;
+    align-items: center;
+  }
+  .nav-left-option {
+    padding-left: 1rem;
+    width: 30%;
+  }
+  .nav-left-option a {
+    margin-left: 0.5rem;
+  }
+  .nav-right-option {
+    justify-content: space-around;
+  }
+
+  @media (max-width: 500px)  {
+    .nav-option {
+      justify-content: start;
+    }
+    .nav-center-option {
+      height: 100%;
+      width: 30%;
+      display: none;
+    }
+    .nav-left-option {
+      padding-left: 1rem;
+    }
+    .navbar-brand {
+      display: none;
+    }
+    .nav-left-option a {
+      margin: 0;
+    }
+    .nav-right-option {
+      padding-right: 0.6rem;
+      height: 100%;
+      width: 70%;
+    }
+    .sign-login-option {
+      display: none;
+    }
+    .account-fullscreen {
+      display: none;
+    }
+  }
+  @media (min-width: 501px) {
+    .account-phone {
+      display: none;
+    }
+  }
 </style>
 
-<nav class="navbar navbar-expand-md bg-body-dark border-bottom sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/listings">Explore</a>
-          
-        </div>
-
-        <div class="navbar-nav ms-auto search-box">
-          <form class="d-flex needs-validation" role="search" action="/listings/search" novalidate>
-            <input class="form-control me-2 search-inp" name="q" type="search" placeholder="Search to location" required>
-            <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-          </form>
-        </div>
-
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/listings/new">Airbnb your home</a>
-          <% if (!currentUser) { %>
-            <a class="nav-link" href="/signup"><b>Sign up</b></a>
-            <a class="nav-link" href="/login"><b>Login</b></a>
-          <% } %>
-          <% if (currentUser) { %>
-          <a class="nav-link" href="/account"><i style="font-size: 20px; margin-top: 5px;" class="fa-regular fa-circle-user"></i></a>
-          <a class="nav-link" href="/logout"><b>Log Out</b></a>
-          <% } %>
-        </div>
+<nav class="navbar bg-body-dark border-bottom sticky-top">
+  <div class="nav-option">
+    <div class="nav-left-option">
+      <div class="">
+        <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></i></a>
+      </div>
+  
+      <div class="">
+        <a class="nav-link" href="/listings">Explore</a>
       </div>
     </div>
+
+    <div class="nav-center-option">
+      <div class="">
+        <form class="d-flex needs-validation" role="search" action="/listings/search" novalidate>
+          <input class="form-control me-2 search-inp" name="q" type="search" placeholder="Search to location" required>
+          <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        </form>
+      </div>
+    </div>
+
+    
+    <div class="nav-right-option">
+      <div>
+        <a class="nav-link" href="/listings/new">Airbnb your home</a>
+      </div>
+  
+      <div class="sign-login-option">
+        <% if (!currentUser) { %>
+          <div><a class="nav-link" href="/signup"><b>Sign up</b></a></div>
+          <div><a class="nav-link" href="/login"><b>Login</b></a></div>
+        <% } %>
+      </div>
+  
+      <div><a class="nav-link account-phone" href="/account"><i style="font-size: 20px; margin-top: 5px;" class="fa-regular fa-circle-user"></i></a></div>
+      <div class="account-logout-option">
+        <% if (currentUser) { %>
+          <div><a class="nav-link account-fullscreen" href="/account"><i style="font-size: 20px; margin-top: 5px;" class="fa-regular fa-circle-user"></i></a></div>
+          <!-- <div><a class="nav-link log-btn" href="/logout"><b>Log Out</b></a></div> -->
+        <% } %>
+      </div>
+    </div>
+  </div>
 </nav>

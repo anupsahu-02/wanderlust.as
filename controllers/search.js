@@ -26,8 +26,7 @@ module.exports.search = async(req, res) => {
             }
         }
     }
-    console.log(allListings)
-    res.render("listings/search.ejs", {allListings});
+    res.render("listings/search.ejs", {allListings, q});
 };
 
 module.exports.searchCategories = async (req, res) => {

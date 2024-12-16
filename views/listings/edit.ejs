@@ -1,7 +1,19 @@
 <% layout("/layouts/boilerplate") %>
+
+<style>
+    @media (max-width: 500px) {
+        .edit-page-phone {
+            margin: 0;
+            width: 95%;
+            margin-left: 0.5rem;
+        }
+    }
+</style>
+
 <div class="row">
-    <div class="col-8 offset-2">
+    <div class="col-8 offset-2 edit-page-phone">
         <h1>Edit Your Listing</h1>
+        <hr>
         <form method="POST" action="/listings/<%= listing._id %>?_method=PUT"
             class="needs-validation"
             enctype="multipart/form-data"
