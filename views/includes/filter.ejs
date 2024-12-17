@@ -49,78 +49,77 @@
         color: black;
     }
 
+    @media (min-width: 501px) {
+        
+    }
+
     @media (max-width: 500px) {
-        /* #filters { */
-            /* height: 80px;
-            width: 300px; */
-            /* flex-direction: column;
-            flex-wrap: wrap; */
-        /* } */
-        .tax-toggle {
-            display: none;
+        #filters {
+            display: flex;
+            flex-wrap: wrap;
         }
     }
 </style>
 
-<div id="filters">
-    <div class="filter">
-        <a class="categ-a" href="/listings/search/categories?q=Trending">
-            <div><i class="fa-solid icon fa-fire"></i></div>
-            <p>Trending</p>
-        </a>
-    </div>
-    <div class="filter">
-        <a class="categ-a" href="/listings/search/categories?q=Rooms">
-            <div><i class="fa-solid icon fa-bed"></i></div>
-            <p>Rooms</p>
-        </a> 
-    </div>
-    <div class="filter">
-        <a class="categ-a" href="/listings/search/categories?q=Iconic Cities">
-            <div><i class="fa-solid icon fa-mountain-city"></i></div>
-            <p>Iconic Cities</p>
-        </a>
-    </div>
-    <div class="filter">
-        <a class="categ-a" href="/listings/search/categories?q=Mountains">
-            <div><i class="fa-solid icon fa-mountain"></i></div>
-            <p>Mountains</p>
-        </a>
-    </div>
-    <div class="filter">
-        <a class="categ-a" href="/listings/search/categories?q=Castles">
-            <div><i class="fa-brands icon fa-fort-awesome"></i></div>
-            <p>Castles</p>
-        </a>
-    </div>
-    <div class="filter">
-        <a class="categ-a" href="/listings/search/categories?q=Amazing Pools">
-            <div><i class="fa-solid icon fa-person-swimming"></i></div>
-            <p>Amazing Pools</p>
-        </a>
-    </div>
-    <div class="filter">
-        <a class="categ-a" href="/listings/search/categories?q=Camping">
-            <div><i class="fa-solid icon fa-campground"></i></div>
-            <p>Camping</p>
-        </a>
-    </div>
-    <div class="filter">
-        <a class="categ-a" href="/listings/search/categories?q=Farms">
-            <div><i class="fa-solid icon fa-cow"></i></div>
-            <p>Farms</p>
-        </a>
-    </div>
-    <div class="filter">
-        <a class="categ-a" href="/listings/search/categories?q=Arctic">
-            <div><i class="fa-solid icon fa-snowman"></i></div>
-            <p>Arctic</p>
-        </a>
-    </div>
-    <div class="tax-toggle ms-auto taxx">
-        <div class="form-check-reverse form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxs</label>
+    <div id="filters">
+        <div class="filter">
+            <a class="categ-a" href="/listings/search/categories?q=Trending">
+                <div><i class="fa-solid icon fa-fire"></i></div>
+                <p>Trending</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="categ-a" href="/listings/search/categories?q=Rooms">
+                <div><i class="fa-solid icon fa-bed"></i></div>
+                <p>Rooms</p>
+            </a> 
+        </div>
+        <div class="filter">
+            <a class="categ-a" href="/listings/search/categories?q=Iconic Cities">
+                <div><i class="fa-solid icon fa-mountain-city"></i></div>
+                <p>Iconic Cities</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="categ-a" href="/listings/search/categories?q=Mountains">
+                <div><i class="fa-solid icon fa-mountain"></i></div>
+                <p>Mountains</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="categ-a" href="/listings/search/categories?q=Castles">
+                <div><i class="fa-brands icon fa-fort-awesome"></i></div>
+                <p>Castles</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="categ-a" href="/listings/search/categories?q=Amazing Pools">
+                <div><i class="fa-solid icon fa-person-swimming"></i></div>
+                <p>Amazing Pools</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="categ-a" href="/listings/search/categories?q=Camping">
+                <div><i class="fa-solid icon fa-campground"></i></div>
+                <p>Camping</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="categ-a" href="/listings/search/categories?q=Farms">
+                <div><i class="fa-solid icon fa-cow"></i></div>
+                <p>Farms</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="categ-a" href="/listings/search/categories?q=Arctic">
+                <div><i class="fa-solid icon fa-snowman"></i></div>
+                <p>Arctic</p>
+            </a>
+        </div>
+        <div class="tax-toggle ms-auto taxx">
+            <div class="form-check-reverse form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxs</label>
+            </div>
         </div>
     </div>
-</div>

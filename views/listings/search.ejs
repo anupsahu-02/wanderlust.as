@@ -1,6 +1,10 @@
 <% layout("/layouts/boilerplate") %>
 <style>
-    .tax-toggle {
+    .tax-info {
+        display: inline;
+        font-size: 0.8rem;
+    }
+    /* .tax-toggle {
         padding: 1rem;
         align-content: center;
         text-align: center !important;
@@ -8,7 +12,7 @@
         border: 1px solid black;
         border-radius: 0.4rem;
         margin-right: 2rem;
-    }
+    } */
     .form-check-input, .form-check-label {
         cursor: pointer;
     }
@@ -19,9 +23,10 @@
     }
     @media (max-width: 500px) {
         .search-listings {
-            width: 95%;
             padding: 1rem 0.3rem 0.5rem 0;
-            position: fixed;
+            position: sticky;
+            /* width: 95%; */
+            width: 100%;
             bottom: 0;
             z-index: 1;
             background-color: white;
@@ -58,7 +63,7 @@
       </form>
     </div>
 </div>
-
+<!-- 
 <script>
     let taxSwitch = document.getElementById("flexSwitchCheckDefault");
     taxSwitch.addEventListener("click", () => {
@@ -71,4 +76,4 @@
             }
         }
     })
-</script>
+</script> -->

@@ -12,39 +12,55 @@
         .tax-toggle-phone {
             display: none;
         }
+        .cate-phone {
+            display: none;
+        }
     }
     @media (max-width: 500px) {
         .search-listings {
-            width: 95%;
             padding: 1rem 0.3rem 0.5rem 0;
-            position: fixed;
+            position: sticky;
+            /* width: 95%; */
+            width: 100%;
             bottom: 0;
             z-index: 1;
             background-color: white;
         }
+        .search-btn {
+            padding: 0 0.5rem;
+        }
         .filters {
+            display: inline;
+        }
+        .cate-phone {
+            margin-bottom: 1rem;
+        }
+        .cate-fullscreen {
             display: none;
         }
     }
 </style>
 
-<span class="filters"><%- include("../includes/filter.ejs") %></span>
+<span class="cate-fullscreen"><%- include("../includes/filter.ejs") %></span>
 
-<div class="tax-toggle ms-auto tax-toggle-phone">
+<details class="cate-phone mydetails">
+    <hr>
+    <summary>Categories</summary>
+    <%- include("../includes/filter.ejs") %>
+</details>
+<hr>
+
+<script>
+    let details = document.querySelector(".mydetails");
+    console.dir(newDetails)
+</script>
+
+<!-- <div class="tax-toggle ms-auto tax-toggle-phone">
     <div class="form-check-reverse form-switch">
         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
         <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxs</label>
     </div>
-</div>
-
-<div class="search-listings">
-    <div class="">
-      <form class="d-flex needs-validation" role="search" action="/listings/search" novalidate>
-        <input class="form-control me-2 search-inp" name="q" type="search" placeholder="Search to location" required>
-        <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-      </form>
-    </div>
-</div>
+</div> -->
 
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
     <% for( listing of allListings ) { %>
@@ -63,6 +79,15 @@
         </div>
         </a>
     <% } %>
+</div>
+
+<div class="search-listings">
+    <div class="">
+      <form class="d-flex needs-validation" role="search" action="/listings/search" novalidate>
+        <input class="form-control me-2 search-inp" name="q" type="search" placeholder="Search.. In Location" required>
+        <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+      </form>
+    </div>
 </div>
 
 <script>
