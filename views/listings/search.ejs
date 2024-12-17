@@ -31,6 +31,9 @@
             z-index: 1;
             background-color: white;
         }
+        .search-btn {
+            padding: 0 0.5rem;
+        }
     }
 </style>
 
@@ -58,7 +61,7 @@
 <div class="search-listings">
     <div class="">
       <form class="d-flex needs-validation" role="search" action="/listings/search" novalidate>
-        <input value="<%= q %>" class="form-control me-2 search-inp" name="q" type="search" placeholder="Search to location" required>
+        <input value="<%= q %>" class="form-control me-2 search-inp" name="q" type="search" placeholder="Search.. In Location" required>
         <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
       </form>
     </div>

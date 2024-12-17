@@ -1,10 +1,35 @@
 <style>
+    @media (min-width: 501px) {
+        .alert-fullscreen {
+            background-color: red;
+        }
+    }
     @media (max-width: 500px) {
         .alert {
             display: none;
         }
     }
 </style>
+
+<div class="alert-fullscreen">
+    <script>
+        // let alerrDiv = document.getElementsByClassName("alert-fullscreen");
+
+        // if(alerrDiv[0].style.backgroundColor == "red") {
+        //     console.log("yed");
+        // }
+
+        // if (alerrDiv[0].classList[0] == "alert-fullscreen") {
+        "<% if (error && error.length) { %>"
+            alert("<%= error %>");
+        "<% } %>"
+
+        // "<% if (successMsg && successMsg.length) { %>"
+        //    alert("<%= successMsg %>");
+        // "<% } %>"
+        
+    </script>
+</div>
 
 <% if (successMsg && successMsg.length) { %>
     <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">

@@ -54,13 +54,17 @@
         }
     }
     @media (max-width: 500px) {
-        .search-listings-phone {
-            width: 100% !important;
+        .search-listings {
             padding: 1rem 0.3rem 0.5rem 0;
-            position: fixed;
+            position: sticky;
+            /* width: 95%; */
+            width: 100%;
             bottom: 0;
             z-index: 1;
             background-color: white;
+        }
+        .search-btn {
+            padding: 0 0.5rem;
         }
         .filter {
             font-size: smaller;
@@ -92,7 +96,7 @@
 <div class="search-listings search-listings-phone">
     <div class="">
       <form class="d-flex needs-validation" role="search" action="/listings/search" novalidate>
-        <input class="form-control me-2 search-inp" name="q" type="search" placeholder="Search to location" required>
+        <input class="form-control me-2 search-inp" name="q" type="search" placeholder="Search.. In Location" required>
         <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
       </form>
     </div>
