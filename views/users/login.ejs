@@ -1,10 +1,33 @@
 <% layout("/layouts/boilerplate") %>
 
 <style>
+    .signup-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 50px;
+        background-color: transparent;
+        border: 1px solid rgb(198, 191, 191);
+        border-radius: 0.3rem;
+        margin: 0 auto;
+    }
+    .signup-link-login-page {
+        text-decoration: none;
+    }
+    .signup-link-login-page:hover {
+        text-decoration: underline;
+    }
     @media (max-width: 500px) {
         .login-phone {
             margin: 0 0 0 1rem;
             width: 90%;
+        }
+        .signup-link-phone {
+            width: 90%;
+        }
+        .signup-link span, .signup-link-login-page {
+            font-size: 0.9rem;
         }
     }
 </style>
@@ -34,5 +57,11 @@
 
         </form>
 
+        <hr> 
+
+        <div class="signup-link signup-link-phone">
+            <span>Don't have an account &nbsp; </span><a class="signup-link-login-page" href="/signup">Sign up</a>
+        </div>
     </div>
+    
 </div>
